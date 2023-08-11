@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+// eslint-disable-next-line no-undef
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
@@ -13,16 +14,13 @@ module.exports = {
         surface: '#FFFFFF',
         'on-surface': '#000000',
         'on-surface-var': '#323232',
-        outline: '#646464'
-       
+        outline: '#646464',
+        'outline-var': '#E7E7E7'
       },
       fontFamily: {
-        roboto: ['Roboto', 'sans-serif'],
-        archivo: ['Archivo', 'sans-serif'],
-        'archivo-narrow': ['Archivo Narrow', 'sans-serif']
+        sans: ['"Roboto"', 'sans-serif']
       }
     }
   },
-  plugins: [],
-}
-
+  plugins: []
+};
