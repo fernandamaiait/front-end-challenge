@@ -10,6 +10,7 @@ module.exports = {
         tertiary: '#D18000',
         'on-primary': '#FFFFFF',
         'on-secondary': '#FFFFFF',
+        'on-secondary-var': '#DDDDDD',
         'on-tertiary': '#FFFFFF',
         surface: '#FFFFFF',
         'on-surface': '#000000',

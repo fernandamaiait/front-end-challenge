@@ -1,5 +1,5 @@
+import MoviesList from '../../components/MoviesList';
 import CategoriesList from './components/CategoriesList';
-import MoviesList from './components/MoviesList';
 
 const movies = [
   {

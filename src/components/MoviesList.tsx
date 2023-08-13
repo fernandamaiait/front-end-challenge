@@ -20,7 +20,7 @@ export default function MoviesList({ movies }: IMoviesListProps) {
             key={id}
             posterPath={poster_path}
             title={title}
-            relaseDate={release_date}
+            releaseDate={release_date}
           />
         );
       })}

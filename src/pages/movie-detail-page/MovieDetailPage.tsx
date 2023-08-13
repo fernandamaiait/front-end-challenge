@@ -1,4 +1,7 @@
-import MoviesList from '../home-page/components/MoviesList';
+import CastList from './components/CastList';
+import Header from './components/Header';
+import Recommendations from './components/Recommendations';
+import Trailer from './components/Trailer';
 
 const movie = {
   adult: false,
@@ -4611,56 +4614,25 @@ export default function MovieDetailPage() {
 
   // console.log(release_dates_br.release_dates[0].certification);
   //console.log(crew4);
-  console.log(videos);
+
   return (
     <div>
-      <div className="bg-secondary w-full flex flex-col  pt-[34px] ">
-        <img
-          src={`https://image.tmdb.org/t/p/original/${poster_path}`}
-          className="h-[279px] self-center rounded-lg shadow "
-        />
-        <p>{title}</p>
-        <span>{certification} anos</span>
-        <span>{release_date} (BR)</span>
-        {genres.map(({ id, name }) => (
-          <div key={id}>{name}</div>
-        ))}
-        <span>{runtime}</span>
-        <span>{Math.round(vote_average * 10)} % </span>
-        <span>Sinopse</span>
-        <span>{overview}</span>
-        {crew.slice(0, 4).map(({ id, name, job }) => (
-          <div key={id}>
-            {name} {job}
-          </div>
-        ))}
+      <Header
+        posterPath={poster_path}
+        title={title}
+        certification={certification}
+        releaseDate={release_date}
+        genres={genres}
+        runtime={runtime}
+        crew={crew}
+        voteAverage={vote_average}
+        overview={overview}
+      />
+      <div className="px-4 sm:px-28">
+        <CastList cast={cast} />
+        <Trailer key={videos.results[0].key} site={videos.results[0].site} />
+        <Recommendations recommendations={recommendations.results} />
       </div>
-      <div className="flex overflow-x-auto">
-        <span>Elenco original</span>
-        {cast.map(({ id, name, profile_path }) => (
-          <div key={id}>
-            {name} {profile_path}
-          </div>
-        ))}
-      </div>
-      <span>Trailer</span>
-
-      <iframe
-        className="aspect-video w-full sm:h-[510px] sm:w-auto"
-        src={`https://www.youtube.com/embed/${videos.results[0].key}`}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-      <section>
-        <span>Recomendações</span>
-        <MoviesList movies={recommendations.results} />
-        {/* {recommendations.results.map(({ id, title, poster_path, release_date }) => (
-          <MovieThumbnail
-            key={id}
-            posterPath={poster_path || ''}
-            title={title}
-            relaseDate={release_date}
-          />
-        ))} */}
-      </section>
     </div>
   );
 }
