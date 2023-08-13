@@ -10,7 +10,7 @@ export default function MovieThumbnail({ posterPath, title, releaseDate }: IMovi
   moment.locale('pt-br');
 
   return (
-    <div className="w-[155px] sm:w-[176px] ">
+    <div className="w-[155px] sm:w-[176px]" onClick={() => {}}>
       <img
         src={`https://image.tmdb.org/t/p/original/${posterPath}`}
         className="rounded w-[156px] h-[232px] sm:w-[176px] sm:h-[264px] border border-outline-var"

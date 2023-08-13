@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 //import HomePage from './pages/home-page/HomePage';
 import TopBar from './components/TopBar';
-import MovieDetailPage from './pages/movie-detail-page/MovieDetailPage';
+import HomePage from './pages/home-page/HomePage';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <TopBar />
-    {/* <HomePage /> */}
-    <MovieDetailPage />
+    <HomePage />
+    {/* <MovieDetailPage /> */}
   </React.StrictMode>
 );
