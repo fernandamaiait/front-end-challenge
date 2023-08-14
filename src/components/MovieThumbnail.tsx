@@ -12,14 +12,7 @@ export default function MovieThumbnail({ id, posterPath, title, releaseDate }: I
   moment.locale('pt-br');
 
   return (
-    <NavLink
-      className="w-[155px] sm:w-[176px] cursor-pointer"
-      to={`/movie/${id}`}
-      // onClick={() => {
-      //   console.log('teste');
-      //   return redirect(`/movie/${id}`);
-      // }}
-    >
+    <NavLink className="w-[155px] sm:w-[176px] cursor-pointer" to={`/movie/${id}`}>
       <img
         src={`https://image.tmdb.org/t/p/original/${posterPath}`}
         className="rounded w-[156px] h-[232px] sm:w-[176px] sm:h-[264px] border border-outline-var"

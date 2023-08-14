@@ -1,10 +1,12 @@
+import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { api } from '../../api/api';
-import CastList from './components/CastList';
 import Header from './components/Header';
-import Recommendations from './components/Recommendations';
-import Trailer from './components/Trailer';
 import TopBar from '../../components/TopBar';
+
+const CastList = React.lazy(() => import('./components/CastList'));
+const Trailer = React.lazy(() => import('./components/Trailer'));
+const Recommendations = React.lazy(() => import('./components/Recommendations'));
 
 export async function loader({ params }: any) {
   const movie = await api.get(
@@ -27,12 +29,10 @@ export default function MovieDetailPage() {
     videos,
     recommendations
   } = movie;
+
   const { certification, release_date } = release_dates.results.filter(
     (release: { iso_3166_1: string }) => release.iso_3166_1 === 'BR'
   )[0].release_dates![0];
-  console.log(videos);
-  console.log(videos.results[0].key);
-  console.log(recommendations);
   return (
     <>
       <TopBar />

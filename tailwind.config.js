@@ -15,6 +15,7 @@ module.exports = {
         surface: '#FFFFFF',
         'on-surface': '#000000',
         'on-surface-var': '#323232',
+        'on-surface-highlight': '#5C16C5',
         outline: '#646464',
         'outline-var': '#E7E7E7'
       },
