@@ -4,14 +4,17 @@ import { api } from '../../api/api';
 import { useLoaderData } from 'react-router-dom';
 import TopBar from '../../components/TopBar';
 
-export async function loader() {
-  const movies = await api.get('/movie/popular');
+export async function loader({ request }: any) {
+  const url = new URL(request.url);
+  const pageIndex = url.searchParams.get('pageIndex') || 1;
+  const movies = await api.get(`/movie/popular?language=pt-BR&page=${pageIndex}`);
   console.log(movies);
   return { movies: movies.data.results };
 }
 
 export default function HomePage() {
   const { movies } = useLoaderData() as any;
+
   return (
     <>
       <TopBar />
