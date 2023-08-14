@@ -1,5 +1,6 @@
 import moment from 'moment';
 import 'moment/locale/pt-br';
+import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 interface IMovieThumbProps {
@@ -10,7 +11,9 @@ interface IMovieThumbProps {
 }
 export default function MovieThumbnail({ id, posterPath, title, releaseDate }: IMovieThumbProps) {
   moment.locale('pt-br');
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <NavLink className="w-[155px] sm:w-[176px] cursor-pointer" to={`/movie/${id}`}>
       <img

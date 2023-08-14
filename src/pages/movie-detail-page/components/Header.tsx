@@ -10,6 +10,7 @@ interface IHeaderProps {
   crew: Array<any>;
   voteAverage: number;
   overview: string;
+  releaseCountry: string;
 }
 
 export default function Header({
@@ -21,12 +22,14 @@ export default function Header({
   runtime,
   crew,
   voteAverage,
-  overview
+  overview,
+  releaseCountry
 }: IHeaderProps) {
   moment.locale();
-  const mpaFilmRating = `${certification} anos`;
+  const mpaFilmRating =
+    releaseCountry === 'US' ? certification : certification ? `${certification} anos` : 'Livre';
   const genresText = genres.map((genre) => genre.name).join(', ');
-  const formattedReleaseDate = `${moment(releaseDate).format('DD/MM/YYYY')} (BR)`;
+  const formattedReleaseDate = `${moment(releaseDate).format('DD/MM/YYYY')} (${releaseCountry})`;
   const formattedRuntime = `${Math.floor(runtime / 60)}h ${runtime % 60}m`;
   const movieDetailsText = [mpaFilmRating, genresText, formattedReleaseDate, formattedRuntime].join(
     ' • '
@@ -50,14 +53,14 @@ export default function Header({
           </div>
           <div className="hidden sm:block">{movieDetailsText}</div>
           <div className="h-[60px] flex gap-[11.6px] items-center">
-            <span>{Math.round(voteAverage * 10)} %</span>
+            <span>{Math.round(voteAverage * 10)}%</span>
             <p className="text-base">Avaliação dos usuários</p>
           </div>
           <p className="font-bold text-xl mb-2 ">Sinopse</p>
           <p className="text-on-secondary-var text-base mb-8">{overview}</p>
           <div className="flex flex-wrap gap-x-[33px] gap-y-[23px]">
             {crew.slice(0, 4).map(({ id, name, job }) => (
-              <div key={id} className="flex flex-col w-[140px] sm:w-[174px]">
+              <div key={id + job} className="flex flex-col w-[140px] sm:w-[174px]">
                 <p className="text-base font-bold">{name}</p>
                 <p className="text-sm">{job}</p>
               </div>

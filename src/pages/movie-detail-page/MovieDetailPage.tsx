@@ -30,11 +30,25 @@ export default function MovieDetailPage() {
     recommendations
   } = movie;
 
-  const { certification, release_date } = release_dates.results.filter(
-    (release: { iso_3166_1: string }) => release.iso_3166_1 === 'BR'
-  )[0].release_dates![0];
+  console.log(release_dates);
+  let releaseDates = release_dates.results.filter(
+    (release: any) => 'iso_3166_1' in release && release.iso_3166_1 === 'BR'
+  );
+
+  if (releaseDates.length === 0) {
+    releaseDates = release_dates.results.filter(
+      (release: any) => 'iso_3166_1' in release && release.iso_3166_1 === 'US'
+    );
+  }
+
+  if (releaseDates.length === 0) {
+    releaseDates = release_dates.results;
+  }
+
+  const { certification, release_date } = releaseDates[0].release_dates[0];
+
   return (
-    <>
+    <div className="mb-8">
       <TopBar />
       <Header
         posterPath={poster_path}
@@ -46,16 +60,17 @@ export default function MovieDetailPage() {
         crew={crew}
         voteAverage={vote_average}
         overview={overview}
+        releaseCountry={releaseDates[0].iso_3166_1}
       />
       <div className="px-4 sm:px-28">
         {cast.length !== 0 && <CastList cast={cast} />}
-        {videos.length !== 0 && (
+        {videos.results.length !== 0 && (
           <Trailer id={videos.results[0].key} site={videos.results[0].site} />
         )}
         {recommendations.results.length !== 0 && (
           <Recommendations recommendations={recommendations.results} />
         )}
       </div>
-    </>
+    </div>
   );
 }
