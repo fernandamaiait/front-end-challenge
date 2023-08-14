@@ -35,16 +35,17 @@ export default function Header({
     ' • '
   );
   return (
-    <div className="bg-secondary w-full flex flex-col text-on-secondary   pt-[34px] py-4 pb-12 px-4 sm:px-28">
+    <header className="bg-secondary w-full flex flex-col text-on-secondary   pt-[34px] py-4 pb-12 px-4 sm:px-28">
       <div className="flex flex-col sm:flex-row sm:relative top-[72px] sm:gap-8 ">
         <img
           src={`https://image.tmdb.org/t/p/original/${posterPath}`}
           className="h-[279px] sm:h-[574px] self-center rounded-lg shadow"
         />
+
         <div className="flex flex-col">
-          <p className="font-bold text-[32px] mt-[42px] sm:mt-0">
+          <h1 className="font-bold text-[32px] mt-[42px] sm:mt-0">
             {title} ({moment(releaseDate).format('YYYY')})
-          </p>
+          </h1>
           <div className="flex flex-col sm:hidden text-lg">
             <span>{mpaFilmRating}</span>
             <span>{formattedReleaseDate}</span>
@@ -68,6 +69,6 @@ export default function Header({
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }

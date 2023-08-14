@@ -29,16 +29,19 @@ export default function HomePage() {
       <TopBar />
       <div className="bg-surface">
         <Header />
-        <div className="mx-4 my-8 sm:mx-[102px] xl:mx-28 sm:my-8">
-          <MoviesList movies={movies} />
-          <div className="mb-[96px] sm:mb-[70px]" />
-          <PaginationBar
-            handleClick={handlePageClick}
-            totalPages={totalPages}
-            pageIndex={pageIndex}
-            handleClickLastPage={handleClickLastPage}
-          />
-        </div>
+        <main className="mb-8">
+          <section className="mx-4 my-8 sm:mx-[102px] xl:mx-28 sm:my-8">
+            <MoviesList movies={movies} />
+          </section>
+          <div className="mt-[96px] sm:mt-[70px]  flex justify-center">
+            <PaginationBar
+              handleClick={handlePageClick}
+              totalPages={totalPages}
+              pageIndex={pageIndex}
+              handleClickLastPage={handleClickLastPage}
+            />
+          </div>
+        </main>
       </div>
     </>
   );

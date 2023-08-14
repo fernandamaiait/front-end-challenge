@@ -62,7 +62,7 @@ export default function MovieDetailPage() {
         overview={overview}
         releaseCountry={releaseDates[0].iso_3166_1}
       />
-      <div className="px-4 sm:px-28">
+      <main className="px-4 sm:px-28">
         {cast.length !== 0 && <CastList cast={cast} />}
         {videos.results.length !== 0 && (
           <Trailer id={videos.results[0].key} site={videos.results[0].site} />
@@ -70,7 +70,7 @@ export default function MovieDetailPage() {
         {recommendations.results.length !== 0 && (
           <Recommendations recommendations={recommendations.results} />
         )}
-      </div>
+      </main>
     </div>
   );
 }

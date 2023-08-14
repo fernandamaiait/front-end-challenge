@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 export default function TopBar() {
   const navigate = useNavigate();
   return (
-    <div
+    <header
       onClick={() => navigate('/')}
       className="bg-primary w-full h-14 px-[112px] flex items-center justify-center sm:justify-start cursor-pointer">
-      <div className="h-[18px] sm:h-[24px]">
+      <h1 className="h-[18px] sm:h-[24px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="100%"
@@ -18,7 +18,7 @@ export default function TopBar() {
             fill="white"
           />
         </svg>
-      </div>
-    </div>
+      </h1>
+    </header>
   );
 }
