@@ -18,6 +18,7 @@ export default function MoviesList({ movies }: IMoviesListProps) {
         return (
           <MovieThumbnail
             key={id}
+            id={id}
             posterPath={poster_path}
             title={title}
             releaseDate={release_date}

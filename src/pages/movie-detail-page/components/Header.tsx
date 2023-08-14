@@ -39,7 +39,9 @@ export default function Header({
           className="h-[279px] sm:h-[574px] self-center rounded-lg shadow"
         />
         <div className="flex flex-col">
-          <p className="font-bold text-[32px]">{title}</p>
+          <p className="font-bold text-[32px] mt-[42px] sm:mt-0">
+            {title} ({moment(releaseDate).format('YYYY')})
+          </p>
           <div className="flex flex-col sm:hidden text-lg">
             <span>{mpaFilmRating}</span>
             <span>{formattedReleaseDate}</span>
