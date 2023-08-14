@@ -4,11 +4,16 @@ Após isso, na pasta onde o projeto foi clonado, executar:
 ### `yarn start`
 
 Eu gostei muito do desafio e quero finalizar algumas coisas que não consegui fazer, como por exemplo: 
+- Tratamento do estado de loading e erro de requests
+- Tratamento de erro de rota (page not found)
+- Html mais semântico
+- Vídeos do vimeo
 - Barra de avaliação dos usuários no detalhe do filme
 - Lista e filtragem de filmes por categorias
+- Testes unitários e integrados
 
 Vou fazer essas alterações em uma branch separada chamada  "improvements".
-Se vocês quiserem voltar amanhã pra dar uma olhada, já vão estar prontas ;)
+Se vocês quiserem voltar amanhã pra dar uma olhada, algumas já vão estar prontas ;)
 
 Sobre as tecnologias, usei as padrões da área do React, como react-router-dom, react-icons, por exemplo, para que todo mundo tenha facilidade de entender o código.
 Usei o Tailwind para estilização. Sei que ele é amplamente odiado na comunidade, mas o Tailwind é a ferramenta que eu consigo produzir conteúdo mais rápido em menos tempo, e como eu ia passar o fim de semana com meus pais por conta do dia dos pais, era o que mais me ajudaria =)
