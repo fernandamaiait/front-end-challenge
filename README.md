@@ -12,8 +12,5 @@ Eu gostei muito do desafio e quero finalizar algumas coisas que não consegui fa
 - Lista e filtragem de filmes por categorias
 - Testes unitários e integrados
 
-Vou fazer essas alterações em uma branch separada chamada  "improvements".
-Se vocês quiserem voltar amanhã pra dar uma olhada, algumas já vão estar prontas ;)
-
 Sobre as tecnologias, usei as padrões da área do React, como react-router-dom, react-icons, por exemplo, para que todo mundo tenha facilidade de entender o código.
 Usei o Tailwind para estilização. Sei que ele é amplamente odiado na comunidade, mas o Tailwind é a ferramenta que eu consigo produzir conteúdo mais rápido em menos tempo, e como eu ia passar o fim de semana com meus pais por conta do dia dos pais, era o que mais me ajudaria =)
